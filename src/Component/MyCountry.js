@@ -23,6 +23,7 @@ export default class MyCountry extends Component {
                 <h2>Class Based Component</h2>
                 <div>MyCountry : {this.state.name}</div>
                 <div>Population : {this.state.Population}</div>
+                <br></br>
                 <button onClick={this.HandleCounty}>Change Country</button>
             </div>
         );
