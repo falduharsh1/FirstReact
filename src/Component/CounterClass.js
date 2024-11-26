@@ -11,7 +11,7 @@ export default class CounterClass extends Component {
   handle_P = () => {
     if (this.state.count < 5) {
       this.setState({
-        count: this.state.count + 1,
+        count: this.state.count + 1
       });
     }
   };
@@ -19,11 +19,11 @@ export default class CounterClass extends Component {
   handle_m = () => {
     if (this.state.count > 0) {
       this.setState({
-        count: this.state.count - 1,
+        count: this.state.count - 1
       });
     }
   };
-  
+
   render() {
     return (
       <>

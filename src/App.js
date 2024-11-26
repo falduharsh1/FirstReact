@@ -6,6 +6,9 @@ import PropsHW from './Component/PropsHW';
 import MyCountryProps from './Component/MyCountryProps';
 import Counter from './Component/Counter';
 import CounterClass from './Component/CounterClass';
+import FruitChange from './Component/FruitChange';
+import Course from './Component/Course';
+import Fees from './Component/Fees';
 
 function App() {
   return (
@@ -13,9 +16,12 @@ function App() {
     {/* <MyCountry/> */}
     {/* <MyCountryFun/> */}
     {/* <Counter/> */}
-    <CounterClass/>
+    {/* <CounterClass/> */}
+    {/* <FruitChange/> */}
     {/* <PropsHW/> */}
     {/* <MyCountryProps /> */}
+    <Course/>
+    <Fees/>
     </>
     
   );
