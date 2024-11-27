@@ -9,6 +9,7 @@ import CounterClass from './Component/CounterClass';
 import FruitChange from './Component/FruitChange';
 import Course from './Component/Course';
 import Fees from './Component/Fees';
+import Timer from './Component/Timer';
 
 function App() {
   return (
@@ -20,8 +21,9 @@ function App() {
     {/* <FruitChange/> */}
     {/* <PropsHW/> */}
     {/* <MyCountryProps /> */}
-    <Course/>
-    <Fees/>
+    {/* <Course/> */}
+    {/* <Fees/> */}
+   <Timer/>
     </>
     
   );
