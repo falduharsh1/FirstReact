@@ -10,6 +10,7 @@ import FruitChange from './Component/FruitChange';
 import Course from './Component/Course';
 import Fees from './Component/Fees';
 import Timer from './Component/Timer';
+import TimerFun from './Component/TimerFun';
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
     {/* <MyCountryProps /> */}
     {/* <Course/> */}
     {/* <Fees/> */}
-   <Timer/>
+   {/* <Timer/> */}
+    <TimerFun/>
     </>
     
   );
