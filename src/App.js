@@ -11,6 +11,7 @@ import Course from './Component/Course';
 import Fees from './Component/Fees';
 import Timer from './Component/Timer';
 import TimerFun from './Component/TimerFun';
+import Loader from './Component/Loader';
 
 function App() {
   return (
@@ -25,9 +26,9 @@ function App() {
     {/* <Course/> */}
     {/* <Fees/> */}
    {/* <Timer/> */}
-    <TimerFun/>
+    {/* <TimerFun/> */}
+    <Loader/>
     </>
-    
   );
 }
 

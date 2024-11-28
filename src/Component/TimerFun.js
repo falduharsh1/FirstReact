@@ -1,22 +1,23 @@
 import React, { useState, useEffect } from "react";
 
 export default function TimerFun() {
-  let Timee = new Date().toLocaleTimeString();
-  console.log(Timee);
+  // 1.
+  const [Time, setTime] = useState(new Date());
 
-  const [Time, setTime] = useState(Timee);
-
-  const Times = () => {
-    setTime(new Date().toLocaleTimeString())  };
+  const Tick = () => {
+    setTime(new Date());
+  };
 
   useEffect(() => {
-    const timeRef = setInterval(Times, 1000);
+    // 3.componentDidMount 4.componentDidUpdate
+    setInterval(Tick, 1000);
 
+    // 5.componentWillUnmount
     return () => {
-      clearInterval(timeRef);
-    };
+
+    }
   }, []);
 
-  return <div>{Time}</div>;
+  // 2.
+  return <div>{Time.toLocaleTimeString()}</div>;
 }
-
