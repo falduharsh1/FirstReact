@@ -12,6 +12,7 @@ import Fees from './Component/Fees';
 import Timer from './Component/Timer';
 import TimerFun from './Component/TimerFun';
 import Loader from './Component/Loader';
+import Quiz from './Component/Quiz';
 
 function App() {
   return (
@@ -27,7 +28,8 @@ function App() {
     {/* <Fees/> */}
    {/* <Timer/> */}
     {/* <TimerFun/> */}
-    <Loader/>
+    {/* <Loader/> */}
+    <Quiz/>
     </>
   );
 }

@@ -76,3 +76,32 @@
   border: 2px solid black;
   margin-left: 2%;
 }
+
+#Quiz_Que{
+  font-size: 22px;
+}
+
+#que_Next {
+  border-radius: 8px;
+  padding: 7px;
+  background-color: rgb(15, 210, 15);
+  border: 1px solid black;
+  margin-top: 15px;
+}
+
+#que_Next:hover{
+  background-color: rgb(84, 224, 84);
+}
+
+#que_Prev:hover{
+  background-color: rgb(231, 101, 101);
+}
+
+#que_Prev {
+  border-radius: 8px;
+  padding: 7px;
+  background-color: rgb(219, 66, 66);
+  border: 1px solid black;
+  margin-left: 10px;
+  color: black;
+}
