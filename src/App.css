@@ -50,3 +50,29 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-4{
+  width: 33%;
+  border: 2px solid black;
+}
+
+#Input{
+  border-radius: 7px;
+  padding: 6px;
+  margin: 8px 0 8px 8px;
+  border: 2px solid black;
+  margin-left: 37%;
+}
+
+#selection{
+  border-radius: 7px;
+  padding: 5px;
+  margin: 10px 0 8px 8px;
+  border: 2px solid black;
+  margin-left: 2%;
+}
