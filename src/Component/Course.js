@@ -43,7 +43,7 @@ export default function Course() {
         </>
         
       ))} */}
-      <button onClick={Add_Data} disabled = {Count === C_Name.length -1} >Next Course </button>
+      <button onClick={Add_Data} disabled = {Count ===   C_Name.length -1} >Next Course </button>
       <button onClick={Remove_Data} disabled = {Count === 0}>Previous Course</button>
       <br></br>
       <span>{C_Name[Count].Name}</span>
