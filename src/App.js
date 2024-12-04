@@ -28,8 +28,8 @@ function App() {
     {/* <Fees/> */}
    {/* <Timer/> */}
     {/* <TimerFun/> */}
-    {/* <Loader/> */}
-    <Quiz/>
+    <Loader/>
+    {/* <Quiz/> */}
     </>
   );
 }

@@ -5,6 +5,7 @@ export default function Loader() {
   const [datas, setdatas] = useState([]);
   const [search, setsearch] = useState("");
   const [sort , setsort] = useState("");
+  const [category , setcategory] = useState('')
 
   const GetData = async () => {
     const response = await fetch("https://fakestoreapi.com/products");
@@ -17,6 +18,7 @@ export default function Loader() {
 
   const HandleFiltering = () => {
     console.log(search);
+    let Fdata = []
 
     const F_data = datas.filter((v, i) => (
       v.title.toLowerCase().includes(search.toLowerCase()) ||
@@ -24,32 +26,56 @@ export default function Loader() {
         v.category.toLowerCase().includes(search.toLowerCase()) ||
         v.description.toLowerCase().includes(search.toLowerCase())
     ));
-    if(sort === "a_z"){
-      return F_data.sort((a,b) => a.title.localeCompare(b.title) )
-    }else if(sort === "z_a"){
-      return F_data.sort((a,b) => b.title.localeCompare(a.title) )
-    }else if(sort === "l_h"){
-      return F_data.sort((a,b) => a.price - b.price)
-    }else if(sort === "h_l"){
-      return F_data.sort((a,b) => b.price - a.price)
+
+    if(sort === 'l_h'){
+      F_data.sort((a,b) => a.price - b.price)
+    }else if(sort === 'h_l'){
+      F_data.sort((a,b) => b.price - a.price)
+    }else if(sort === 'a_z'){
+      F_data.sort((a,b) => a.title.localeCompare(b.title))
+    }else if(sort === 'z_a'){
+      F_data.sort((a,b) => b.title.localeCompare(a.title))
     }
+
+    // if(F_data != categoryes){
+    //     return F_data
+    // }
     return F_data;
   };
 
+  console.log();
   
 
   const Final_Data = HandleFiltering();
+  let uniquearr =[]
+
+  let categoryes = Final_Data.map((v => v.category))
+  console.log(categoryes);
+  
+  let u_data = categoryes.map((v) => {
+    if(!uniquearr.includes(v)){
+      uniquearr.push(v)
+    }
+  })
+
+  console.log(Final_Data);
 
   useEffect(() => {
     // setTimeout(() => {
     // }, 3000);
     setLoading(false);
     GetData();
-  }, []);
+ }, []);
+
+ console.log("uniquearr", category);
 
 return (
   <div>
-    <div>
+    <div style={{
+      display : "flex",
+      justifyContent: "center",
+      alignItems: "center"
+    }}>
       <input
         type="text"
         name="search"
@@ -66,6 +92,16 @@ return (
         <option value="a_z">a to z</option>
         <option value="z_a">z to a</option>
       </select>
+
+    {
+      uniquearr.map((v) => (
+        <button className="cat_btn" onClick={() => setcategory(v)}>
+          {v}
+        </button>
+      ))
+    }
+
+
     </div>
 
     {Loading ? (
