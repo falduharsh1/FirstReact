@@ -241,3 +241,48 @@ main {
 		stroke-dashoffset: -358;
 	}
 }
+
+#n_btn{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+#Nav_btn1{
+  margin-left: 30%;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: rgb(207, 49, 49);
+}
+
+#Nav_btn2{
+  margin-right: 40%;
+  padding: 10px 17px 10px 17px;
+  border-radius: 6px;
+  background-color: #5cca5c;
+}
+
+#btn_1{
+  padding: 8px;
+  border-radius: 6px;
+  background-color: #61dafb;
+}
+
+#btn_2{
+  padding: 8px;
+  border-radius: 6px;
+  background-color: #61dafb;
+}
+
+#btn_3{
+  padding: 8px;
+  border-radius: 6px;
+  background-color: #61dafb;
+}
+
+#btn_4{
+  padding: 8px;
+  border-radius: 6px;
+  background-color: #61dafb;
+}
+

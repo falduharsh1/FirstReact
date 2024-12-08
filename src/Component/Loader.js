@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import PaginationComponent from "./PaginationComponent";
 
 export default function Loader() {
   const [Loading, setLoading] = useState(true);
@@ -7,7 +8,9 @@ export default function Loader() {
   const [sort, setsort] = useState("");
   const [category, setcategory] = useState("");
   const [Loader_data , set_Loader_data] = useState([]);
-  const [allData , set_allData] = useState('')
+  const [allData , set_allData] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 5;
 
   const GetData = async () => {
     const response = await fetch("https://fakestoreapi.com/products");
@@ -41,7 +44,7 @@ export default function Loader() {
 
     if (sort === "l_h") {
       F_data.sort((a, b) => a.price - b.price);
-    } else if (sort === "h_l") {
+    } else if (sort === "h_l") {    
       F_data.sort((a, b) => b.price - a.price);
     } else if (sort === "a_z") {
       F_data.sort((a, b) => a.title.localeCompare(b.title));
@@ -60,15 +63,31 @@ export default function Loader() {
   const Final_Data = HandleFiltering();
   console.log(Final_Data);
 
+  const totalPages = Math.ceil(Final_Data.length / itemsPerPage);
+  
+  const handle_Next = () => {
+    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
+  };
+
+  const handle_Previous = () => {
+    if (currentPage > 1) setCurrentPage(currentPage - 1);
+  };
+
+  const paginatedData = Final_Data.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
   useEffect(() => {
     setTimeout(() => {
       //  setLoading(false);
-    },3000);
+    },2000);
     // setLoading(false);  
     GetData();
   }, []);
 
   console.log("uniquearr", category);
+  console.log(Final_Data);
 
   return (
     
@@ -140,17 +159,26 @@ export default function Loader() {
      </main>
       ) : (
         <div className="row">
-          {Final_Data.map((v, i) => (
+          {paginatedData.map((v, i) => (
             <div className="col-4"> 
               <img id="loader_img" src={v.image} width="170px" height="190px" alt="Product" />
               <h2>{v.title}</h2>
               <h2>{v.price}</h2>
               <h3>{v.category}</h3>
-              <button id="cart">Add to Cart</button>
+              {/* <button id="cart">Add to Cart</button> */}
             </div>
           ))}
         </div>
       )}
+      <div id="n_btn">
+      <button id="Nav_btn1" onClick={handle_Previous} disabled={currentPage === 1} >Previous</button>
+      <button id="btn_1">1</button>
+      <button id="btn_2">2</button>
+      <button id="btn_3">3</button>
+      <button id="btn_4">4</button>
+      <button id="Nav_btn2"onClick={handle_Next}  disabled={currentPage === totalPages}>Next</button>
+      </div>
     </div>
-  );
-}
+  );  
+  }
+

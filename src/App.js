@@ -13,6 +13,8 @@ import Timer from './Component/Timer';
 import TimerFun from './Component/TimerFun';
 import Loader from './Component/Loader';
 import Quiz from './Component/Quiz';
+// import PaginationComponent from './components/PaginationComponent';
+
 
 function App() {
   return (
@@ -29,6 +31,7 @@ function App() {
    {/* <Timer/> */}
     {/* <TimerFun/> */}
     <Loader/>
+    {/* <PaginationComponent/> */}
     {/* <Quiz/> */}
     </>
   );
